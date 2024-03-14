@@ -90,7 +90,7 @@ def main():
         elif choice == '8':
             user_id = input("Enter user ID of the user to delete: ")
             user_manager.delete_user(user_id)
-            print("User deleted.")
+            
         
         # Handle user's choice to list user
         elif choice == '9':

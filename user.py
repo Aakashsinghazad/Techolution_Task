@@ -52,13 +52,15 @@ class UserManager:
    def delete_user(self, user_id):
        """
        Delete the user with the given user_id.
-
-       Parameters:
-       user_id (str): The user's unique ID.
        """
        users = self.storage.load_users() 
        users = [user for user in users if user["user_id"] != user_id]
-       self.storage.save_users(users) 
+       if users:
+           self.storage.save_users(users) 
+           print("User deleted.")
+       else:
+           print("User with given UserID not found.")
+
    def list_users(self):
        """
        Print the list of all users in the system.
